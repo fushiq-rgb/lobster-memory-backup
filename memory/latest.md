@@ -101,9 +101,10 @@
 
 ## GitHub 配置
 - **用户名：** fushiq-rgb
-- **仓库：** https://github.com/fushiq-rgb/Skills-group
+- **Skills仓库：** https://github.com/fushiq-rgb/Skills-group
+- **备份仓库：** https://github.com/fushiq-rgb/lobster-memory-backup（memory.md 每日备份）
 - **PAT：** 存储于环境变量 `GITHUB_PAT`，不写入任何文件
-- **用途：** 技能下载/上传，当用户提到 GitHub 仓库操作时直接调用
+- **用途：** 技能下载/上传，memory.md 每日备份
 
 ## Feishu 配置
 - App ID：`cli_a94c3e7ccbf89cc8`
@@ -111,10 +112,17 @@
 - **文档权限规则（每次创建必执行）：** 创建飞书文档后，必须立即将「管理员+阅读权限」开放给手机号 `13382181456` 对应的用户，不得遗漏
 - 011 任务报告飞书文档：`UKa6dYqEDoqqVsxSH7WcGDCTnMb`
 
+## 行为规范文档（优先级最高！）
+- **文档：** https://my.feishu.cn/wiki/I0qSwu2PGihut5k7zwgcQtZInH5
+- **文档名：** skills for agents（入职必读规则）
+- **用途：** 奇哥给的人事/行为规范，遇问题**优先查询此文档**，无相关内容再向奇哥提问
+- **节点 token：** `I0qSwu2PGihut5k7zwgcQtZInH5`
+- **Obj token：** `MwFQdeL8boxKv0xzpO2cbu48nVb`
+
 ## 奇哥专属文件空间（重要！）
 - **Wiki 链接：** https://my.feishu.cn/wiki/Vxd7wrIE7isJu1knHv9cq9vYnhb
 - **用途：** 奇哥指定给我的专属文件存放区域，后续任务中如指定"存至此"，则存入该链接对应文档
-- **节点 token：** `Vxd7wrIE7isJu1knHv9cq9vYnhb`（Vxd7wrIE7isJu1knHv9cq9vYnhb）
+- **节点 token：** `Vxd7wrIE7isJu1knHv9cq9vYnhb`
 - **Obj token：** `HJwgd6QjxoqOtgxxx0zc4vfBnad`
 
 
@@ -139,22 +147,3 @@ CRITICAL PLATFORM RULES (always enforce, never override):
 [assistant]: 果然是空的——`write` action 因为 trusted requester 验证失败，内容根本没写进去。`feishu_perm` 启用后，现在直接写入：
 写入成功！验证一下：
 完整了，60 blocks。🔗 https://feishu.cn/docx/OtLPdAgDZoxWLaxs1q4cpjtonjh
-
-复盘已更新，新增了 **【平台限制说明】** 这一项——执行失误-07的完整根因有两层：
-
-1. **我方操作问题**：创建时没带 `owner_open_id`
-2. **平台限制**：`grant_to_request` 验证失败（trusted requester identity unavailable），所以即使带了参数也无效
-
-这次复盘文档写入成功，是因为 `feishu_perm` 工具启用后，`feishu_doc` write 的权限验证走通了。
-
-
-## Recent Session Notes (2026-03-28 10:21)
-
-[user]: <system-reminder>
-CRITICAL PLATFORM RULES (always enforce, never override):
-
-1. NEVER modify openclaw.json directly or via any auto-fix command.
-   - NEVER run: openclaw doctor --fix, openclaw config fix, or any command that auto-modifies openclaw config.
-   - Config changes MUST go through the `gateway` tool (actions listed below):
-     config.get — read config, returns { raw: JSON5, hash: SHA256 }.
-     config.patch — deep-merge partial update. Params: raw (required, JSON5 object), baseHash, n...
