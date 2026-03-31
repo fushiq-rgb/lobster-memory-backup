@@ -112,18 +112,19 @@
 - **文档权限规则（每次创建必执行）：** 创建飞书文档后，必须立即将「管理员+阅读权限」开放给手机号 `13382181456` 对应的用户，不得遗漏
 - 011 任务报告飞书文档：`UKa6dYqEDoqqVsxSH7WcGDCTnMb`
 
-## 行为规范文档（优先级最高！）
+## 📌 工作规范（最重要，优先级最高！）
 - **文档：** https://my.feishu.cn/wiki/I0qSwu2PGihut5k7zwgcQtZInH5
-- **文档名：** skills for agents（入职必读规则）
-- **用途：** 奇哥给的人事/行为规范，遇问题**优先查询此文档**，无相关内容再向奇哥提问
+- **文档名：** On board for agents（任务入职必读）
+- **用途：** 奇哥制定的工作规范须知，**遇任何疑问优先查阅此文档**，无相关内容再向奇哥提问
 - **节点 token：** `I0qSwu2PGihut5k7zwgcQtZInH5`
 - **Obj token：** `MwFQdeL8boxKv0xzpO2cbu48nVb`
+- **飞书 Wiki 仅用作阶段性输出，不做为主档存储**
 
-## 奇哥专属文件空间（重要！）
+## 📎 飞书Wiki（交互文件）
 - **Wiki 链接：** https://my.feishu.cn/wiki/Vxd7wrIE7isJu1knHv9cq9vYnhb
-- **用途：** 奇哥指定给我的专属文件存放区域，后续任务中如指定"存至此"，则存入该链接对应文档
 - **节点 token：** `Vxd7wrIE7isJu1knHv9cq9vYnhb`
 - **Obj token：** `HJwgd6QjxoqOtgxxx0zc4vfBnad`
+- **用途：** 奇哥与我之间的交互文件，存放阶段性输出（如调研报告、架构文档等），由我写入
 
 
 ## Recent Session Notes (2026-03-27 20:44)
